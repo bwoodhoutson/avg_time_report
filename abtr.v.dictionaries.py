@@ -1,4 +1,4 @@
-###
+### Please forgive my formatting (self teaching)
 from datetime import datetime as dt
 from datetime import timedelta as tdelta
 from tkinter import *
@@ -10,9 +10,10 @@ def abtr_func():
     input_file = entry_1.get()
     wb_in = xlrd.open_workbook(input_file)
     sheet = wb_in.sheet_by_index(0) 
-    lot = []
-    # lot = lot 
-    list_of_times = []                      
+    lor = []
+    # lor = list of whole rows
+    list_of_times = []  
+    # list of times only
     
     ### building current_abtr.xlsx   
     wb_out = xlsxwriter.Workbook('current_abtr.xlsx')
@@ -54,36 +55,36 @@ def abtr_func():
             t3 = t2-t1
             row_tuple = (index, bidder, dealer, t3)
             if t3.total_seconds() > 10 and t3.total_seconds() < 600: 
-                lot.append(row_tuple)
+                lor.append(row_tuple)
                 list_of_times.append(t3)
     
     # dictionary with bidder as key
     b = {}   
-    [b [t [1]].append(t [3]) if t [1] in b.keys() else b.update({t [1]: [t [3]]}) for t in lot]
+    [b [t [1]].append(t [3]) if t [1] in b.keys() else b.update({t [1]: [t [3]]}) for t in lor]
     
     '''
     #building dictionary by bidder v1.0
-    for i in range(len(lot)):
-        if lot[i][1] in b.keys():                             # if key is present in the list...
-            b[lot[i][1]].append(lot[i][3])                    # just append the value
+    for i in range(len(lor)):
+        if lor[i][1] in b.keys():                             # if key is present in the list...
+            b[lor[i][1]].append(lor[i][3])                    # just append the value
         else:
-            b[lot[i][1]]= []                                 # else create a empty list as value for the key
-            b[lot[i][1]].append(lot[i][3])                   # now append the value for that key
+            b[lor[i][1]]= []                                 # else create a empty list as value for the key
+            b[lor[i][1]].append(lor[i][3])                   # now append the value for that key
     
     print(b)
     '''
     # dictionary with dealer as key
     d = {}    
-    [d [t [2]].append(t [3]) if t [2] in d.keys() else d.update({t [2]: [t [3]]}) for t in lot]
+    [d [t [2]].append(t [3]) if t [2] in d.keys() else d.update({t [2]: [t [3]]}) for t in lor]
           
     '''
     #building dictionary by dealer v1.0
-    for i in range(len(lot)):
-        if lot[i][2] in d.keys():                            # if key 
-            d[lot[i][2]].append(lot[i][3])                    # just append 
+    for i in range(len(lor)):
+        if lor[i][2] in d.keys():                            # if key 
+            d[lor[i][2]].append(lor[i][3])                    # just append 
         else:
-            d[lot[i][2]]= []                                 # else create 
-            d[lot[i][2]].append(lot[i][3])                   # now append 
+            d[lor[i][2]]= []                                 # else create 
+            d[lor[i][2]].append(lor[i][3])                   # now append 
     
     print(d) 
     '''
