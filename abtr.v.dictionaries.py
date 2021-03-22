@@ -61,31 +61,29 @@ def abtr_func():
     # dictionary with bidder as key
     b = {}   
     [b [t [1]].append(t [3]) if t [1] in b.keys() else b.update({t [1]: [t [3]]}) for t in lor]
+
+    # dictionary with dealer as key
+    d = {}    
+    [d [t [2]].append(t [3]) if t [2] in d.keys() else d.update({t [2]: [t [3]]}) for t in lor]
     
+        
     '''
-    #building dictionary by bidder v1.0
+    #This was how I originally built these distionaries. 
+    
     for i in range(len(lor)):
         if lor[i][1] in b.keys():                             # if key is present in the list...
             b[lor[i][1]].append(lor[i][3])                    # just append the value
         else:
             b[lor[i][1]]= []                                 # else create a empty list as value for the key
             b[lor[i][1]].append(lor[i][3])                   # now append the value for that key
-    
     print(b)
-    '''
-    # dictionary with dealer as key
-    d = {}    
-    [d [t [2]].append(t [3]) if t [2] in d.keys() else d.update({t [2]: [t [3]]}) for t in lor]
-          
-    '''
-    #building dictionary by dealer v1.0
+
     for i in range(len(lor)):
         if lor[i][2] in d.keys():                            # if key 
             d[lor[i][2]].append(lor[i][3])                    # just append 
         else:
             d[lor[i][2]]= []                                 # else create 
             d[lor[i][2]].append(lor[i][3])                   # now append 
-    
     print(d) 
     '''
     
@@ -145,7 +143,7 @@ button_1 = Button(top_frame, text = "Click me to run program", command = abtr_fu
 label_1 = Label(top_frame, text = "--->>   New ABTR    <<---", bg="black", fg="yellow")
 label_2 = Label(top_frame, text = "This window will close when program complete.", bg="black", fg="yellow")
 label_3 = Label(top_frame, text = "Look for 'current_abtr.xlsx' in the same file location as this program.", bg="black", fg="yellow")
-label_4 = Label(top_frame, text = "Bid Timing Report Here: ", bg="black", fg="yellow")
+label_4 = Label(top_frame, text = "Copy and Paste Bid Timing Report Here: ", bg="black", fg="yellow")
 label_1.grid(row = 0, column = 0)
 label_2.grid(row = 1, column = 0)
 label_3.grid(row = 2, column = 0)
