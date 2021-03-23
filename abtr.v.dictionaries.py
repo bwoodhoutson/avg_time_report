@@ -55,6 +55,7 @@ def abtr_func():
             t3 = t2-t1
             row_tuple = (index, bidder, dealer, t3)
             if t3.total_seconds() > 10 and t3.total_seconds() < 600: 
+                #We only calculate avearges between ten seconds and ten minutes. 
                 lor.append(row_tuple)
                 list_of_times.append(t3)
     
