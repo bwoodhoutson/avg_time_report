@@ -5,7 +5,7 @@ import xlsxwriter
 import xlrd
 
 def abtr_func():
-    """This is the 'Main" function of the program and is called by the Tkinter window. 
+    """This is the "Main" function of the program and is called by the Tkinter window. 
     
     This function creates a "current_abtr.xlsx" file in the same folder that this program is held.
     It reads a downloaded "Bid Timing Report.xlsx" file from the portal.
